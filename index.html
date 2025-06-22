@@ -14,6 +14,84 @@
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css" />
+ <style>
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: #007aff;
+      cursor: pointer;
+      margin-left: auto;
+      margin-right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 70%;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: linear-gradient(to right, rgba(204, 231, 255, 0), #cce7ff 30%, #e6f2ff);
+
+        /*box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);*/
+        padding: 1rem;
+        z-index: 999;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        align-items: flex-end; /* Align items to right */
+        text-align: right;     /* Align text to right */
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .cta {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        width: auto;
+        z-index: 1000;
+      }
+
+      .theme-toggle {
+        position: absolute;
+        top: 65px;
+        left: 20px;
+        z-index: 1000;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 5px 10px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      body.dark .theme-toggle {
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    #scrollToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #007aff;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: none;
+      z-index: 999;
+    }
+</style>
+
 </head>
 <body>
 
@@ -26,6 +104,8 @@
       </div>
       <div class="tagline">Implementing Ideas...</div>
     </div>
+
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
 
     <nav class="nav-links">
       <a href="#home">Home</a>
@@ -75,9 +155,10 @@
     </div>
   </section>
 
-</body>
-</html>
-
+  <!-- Scroll to Top Button -->
+  <div id="scrollToTop" title="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </div>
    <!-- Service Section -->
   <section class="services-section" id="services">
   <h2>Our Services</h2>
@@ -366,5 +447,6 @@
 </footer>
 
 
+<script src="main.js"></script>
 </body>
 </html>
