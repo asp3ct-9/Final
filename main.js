@@ -107,3 +107,25 @@ document.querySelectorAll('.media').forEach(media => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.querySelector(".menu-toggle");
+    const collapse = document.querySelector(".navbar-collapse");
+    menuBtn.addEventListener("click", () => {
+      collapse.classList.toggle("show");
+    });
+  });
+
+// Toggle nav for mobile
+    document.querySelector(".menu-toggle").addEventListener("click", () => {
+      document.querySelector(".nav-links").classList.toggle("show");
+    });
+
+    // Scroll to top
+    const scrollBtn = document.getElementById("scrollToTop");
+    window.addEventListener("scroll", () => {
+      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
